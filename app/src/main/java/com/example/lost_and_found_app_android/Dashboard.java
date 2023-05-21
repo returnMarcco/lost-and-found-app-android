@@ -1,7 +1,6 @@
 package com.example.lost_and_found_app_android;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
@@ -9,9 +8,6 @@ import android.view.View.OnClickListener;
 import android.content.Intent;
 
 public class Dashboard extends AppCompatActivity {
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
