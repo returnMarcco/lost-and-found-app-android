@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">lost-and-found-app-android</string>
+    <string name="textview">Seek and You Shall Find</string>
+    <string name="github_com_returnmarcco">© github.com/returnMarcco</string>
+    <string name="show_all_items">Show All Items</string>
+    <string name="create_new_post">Create New Post</string>
+    <string name="see_all_lost_items">See All Lost Items</string>
+    <string name="remove_found_item">Remove Found Item</string>
+    <string name="post_lost_item_form">Post Lost Item Form</string>
+</resources>
