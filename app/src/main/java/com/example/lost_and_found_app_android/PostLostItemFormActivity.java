@@ -7,10 +7,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Button;
+import android.widget.RadioGroup;
 
 public class PostLostItemFormActivity extends AppCompatActivity {
-    RadioButton lostRadioBtn;
-    RadioButton foundRadioBtn;
+    RadioGroup lostOrFoundRadioGroup;
+    RadioButton lostItemRadioBtn;
+    RadioButton foundItemRadioBtn;
     EditText userName;
     EditText userPhoneNumber;
     EditText itemDescription;
@@ -18,31 +20,47 @@ public class PostLostItemFormActivity extends AppCompatActivity {
     EditText locationOfLostFoundItem;
     Button savePostButton;
 
+    boolean isLostItem = false;
+    boolean isFoundItem = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_lost_item_form);
-        lostRadioBtn = findViewById(R.id.idLostRadioBtn);
-        foundRadioBtn = findViewById(R.id.idFoundRadioBtn);
+        // Widgets
+        lostOrFoundRadioGroup = findViewById(R.id.idRadioGroupLostOrFound);
         userName = findViewById(R.id.idNameInput);
         userPhoneNumber = findViewById(R.id.editTextPhone);
         itemDescription = findViewById(R.id.idItemDescription);
         dateOfPost = findViewById(R.id.idEditTextDate);
         locationOfLostFoundItem = findViewById(R.id.idLocationLostFoundItem);
         savePostButton = findViewById(R.id.idSavePostBtn);
+        lostItemRadioBtn = findViewById(R.id.idLostRadioBtn);
+        foundItemRadioBtn = findViewById(R.id.idFoundRadioBtn);
+
+        isLostOrFoundItemRadioButtonHandler();
     }
+
     protected void saveButtonHandler(EditText userInput) {
-        savePostButton.setOnClickListener(new View.OnClickListener() {
+        savePostButton.setOnClickListener(view -> {
+            // MySQLite query here
+        });
+    }
+    protected void isLostOrFoundItemRadioButtonHandler() {
+        lostItemRadioBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Get user input here
-                // Concat to one record here
-                // MySQLite CRUD here
+                isLostItem = true;
+                isFoundItem = false;
+            }
+        });
+
+        foundItemRadioBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                isFoundItem = true;
+                isLostItem = false;
             }
         });
     }
-
-
-
 }

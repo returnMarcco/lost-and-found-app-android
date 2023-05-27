@@ -54,34 +54,13 @@
         app:layout_constraintTop_toTopOf="@+id/idFooterView"
         tools:ignore="TextContrastCheck" />
 
-    <RadioButton
-        android:id="@+id/idLostRadioBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="24dp"
-        android:text="@string/lost"
-        app:layout_constraintEnd_toStartOf="@+id/idFoundRadioBtn"
-        app:layout_constraintTop_toBottomOf="@+id/idHeaderView" />
-
-    <RadioButton
-        android:id="@+id/idFoundRadioBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="100dp"
-        android:text="@string/found"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idHeaderView" />
-
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/idPostTypeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="9dp"
         android:text="@string/post_type"
-        app:layout_constraintEnd_toStartOf="@+id/idLostRadioBtn"
-        app:layout_constraintHorizontal_bias="0.835"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idHeaderView" />
 
@@ -91,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="101dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="Name:"
         android:importantForAutofill="no"
@@ -103,28 +82,12 @@
         tools:ignore="LabelFor,TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/idItemDescription"
-        android:layout_width="211dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="16dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/description"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/idEditTextDate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
         android:id="@+id/idLocationLostFoundItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="68dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/location"
@@ -137,12 +100,29 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="12dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/phone"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/idItemDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
         android:id="@+id/idEditTextDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="16dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/date"
@@ -155,20 +135,19 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/editTextPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/idItemDescription"
+        android:layout_width="211dp"
+        android:layout_height="130dp"
         android:layout_marginStart="100dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="24dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/phone"
-        android:inputType="phone"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/idItemDescription"
+        android:hint="@string/description"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/idEditTextDate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -182,5 +161,29 @@
         app:layout_constraintBottom_toTopOf="@+id/idFooterView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/idRadioGroupLostOrFound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="73dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idHeaderView">
+
+        <RadioButton
+            android:id="@+id/idLostRadioBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/lost" />
+
+        <RadioButton
+            android:id="@+id/idFoundRadioBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="100dp"
+            android:text="@string/found" />
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
