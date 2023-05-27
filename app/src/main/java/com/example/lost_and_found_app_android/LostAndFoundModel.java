@@ -1,18 +1,19 @@
 package com.example.lost_and_found_app_android;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class LostAndFoundModel {
     private int itemId;
     private String userName;
     private int phoneNumber;
     private String itemDescription;
-    private Date date;
+    private String date;
     private String itemLocation;
     private boolean isDeleted;
     private String lostOrFound;
 
-    public LostAndFoundModel(int itemId, String userName, int phoneNumber, String itemDescription, Date date, String itemLocation, boolean isDeleted, String lostOrFound) {
+    public LostAndFoundModel(int itemId, String userName, int phoneNumber, String itemDescription, String date, String itemLocation, boolean isDeleted, String lostOrFound) {
         this.itemId = itemId;
         this.userName = userName;
         this.phoneNumber = phoneNumber;
@@ -39,7 +40,7 @@ public class LostAndFoundModel {
         return itemDescription;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
@@ -72,7 +73,7 @@ public class LostAndFoundModel {
         this.itemDescription = itemDescription;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
