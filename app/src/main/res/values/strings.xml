@@ -7,4 +7,13 @@
     <string name="see_all_lost_items">See All Lost Items</string>
     <string name="remove_found_item">Remove Found Item</string>
     <string name="post_lost_item_form">Post Lost Item Form</string>
+    <string name="lost">Lost</string>
+    <string name="found">Found</string>
+    <string name="post_type">Post Type:</string>
+    <string name="name">Name:</string>
+    <string name="phone">Phone:</string>
+    <string name="description">Description:</string>
+    <string name="item_description">Description:</string>
+    <string name="date">Date:</string>
+    <string name="location">Location:</string>
 </resources>
