@@ -56,10 +56,17 @@ public class PostLostItemFormActivity extends AppCompatActivity {
             @SuppressLint("NewApi")
             @Override
             public void onClick(View view) {
+
                 try {
                     if (lostOrFoundPost != null) {
                         LostAndFoundModel lostAndFoundPost = new LostAndFoundModel(-1, userName.getText().toString(), Integer.parseInt(userPhoneNumber.getText().toString()), itemDescription.getText().toString(), dateOfPost.getText().toString(), locationOfLostFoundItem.getText().toString(), false, lostOrFoundPost);
-                        Toast.makeText(PostLostItemFormActivity.this, lostOrFoundPost + " item has been posted!", Toast.LENGTH_LONG).show();
+                        DbHelper dataBaseHelper = new DbHelper(PostLostItemFormActivity.this);
+                        boolean success = dataBaseHelper.createLostOrFoundItemRecord(lostAndFoundPost);
+                        if (success) {
+                            Toast.makeText(PostLostItemFormActivity.this, lostOrFoundPost + " item has been posted successfully!", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(PostLostItemFormActivity.this, "An error has occurred! The item has not been posted.", Toast.LENGTH_LONG).show();
+                        }
                     } else {
                         Toast.makeText(PostLostItemFormActivity.this, "You must select a category for this post", Toast.LENGTH_SHORT).show();
                     }
