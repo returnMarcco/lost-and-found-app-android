@@ -13,13 +13,12 @@ public class LostAndFoundModel {
     private boolean isDeleted;
     private String lostOrFound;
 
-    public LostAndFoundModel(int itemId, String userName, int phoneNumber, String itemDescription, String date, String itemLocation, boolean isDeleted, String lostOrFound) {
+    public LostAndFoundModel(int itemId, String userName, int phoneNumber, String itemDescription, String date, boolean isDeleted, String lostOrFound) {
         this.itemId = itemId;
         this.userName = userName;
         this.phoneNumber = phoneNumber;
         this.itemDescription = itemDescription;
         this.date = date;
-        this.itemLocation = itemLocation;
         this.isDeleted = isDeleted;
         this.lostOrFound = lostOrFound;
     }
@@ -48,7 +47,7 @@ public class LostAndFoundModel {
         return itemLocation;
     }
 
-    public boolean isDeleted() {
+    public boolean getIsDeleted() {
         return isDeleted;
     }
 
@@ -81,7 +80,7 @@ public class LostAndFoundModel {
         this.itemLocation = itemLocation;
     }
 
-    public void setDeleted(boolean deleted) {
+    public void setIsDeleted(boolean deleted) {
         isDeleted = deleted;
     }
 

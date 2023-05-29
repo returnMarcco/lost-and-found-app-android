@@ -21,6 +21,7 @@ public class PostLostItemFormActivity extends AppCompatActivity {
     EditText locationOfLostFoundItem;
     Button savePostButton;
     String lostOrFoundPost;
+    EditText itemLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class PostLostItemFormActivity extends AppCompatActivity {
         savePostButton = findViewById(R.id.idSavePostBtn);
         lostItemRadioBtn = findViewById(R.id.idLostRadioBtn);
         foundItemRadioBtn = findViewById(R.id.idFoundRadioBtn);
+        itemLocation = findViewById(R.id.idLocationLostFoundItem);
         lostItemRadioBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +61,7 @@ public class PostLostItemFormActivity extends AppCompatActivity {
 
                 try {
                     if (lostOrFoundPost != null) {
-                        LostAndFoundModel lostAndFoundPost = new LostAndFoundModel(-1, userName.getText().toString(), Integer.parseInt(userPhoneNumber.getText().toString()), itemDescription.getText().toString(), dateOfPost.getText().toString(), locationOfLostFoundItem.getText().toString(), false, lostOrFoundPost);
+                        LostAndFoundModel lostAndFoundPost = new LostAndFoundModel(-1, userName.getText().toString(), Integer.parseInt(userPhoneNumber.getText().toString()), itemDescription.getText().toString(), dateOfPost.getText().toString(), false, lostOrFoundPost);
                         DbHelper dataBaseHelper = new DbHelper(PostLostItemFormActivity.this);
                         boolean success = dataBaseHelper.createLostOrFoundItemRecord(lostAndFoundPost);
                         if (success) {

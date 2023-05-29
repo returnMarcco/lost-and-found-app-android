@@ -1,6 +1,8 @@
 package com.example.lost_and_found_app_android;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
@@ -23,7 +25,6 @@ public class Dashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         showAllLostItemsBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
