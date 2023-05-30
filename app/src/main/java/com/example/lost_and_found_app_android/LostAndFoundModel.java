@@ -13,18 +13,19 @@ public class LostAndFoundModel {
     private boolean isDeleted;
     private String lostOrFound;
 
-    public LostAndFoundModel(int itemId, String userName, int phoneNumber, String itemDescription, String date, boolean isDeleted, String lostOrFound) {
+    public LostAndFoundModel(int itemId, String userName, int phoneNumber, String itemDescription, String date, boolean isDeleted, String itemLocation, String lostOrFound) {
         this.itemId = itemId;
         this.userName = userName;
         this.phoneNumber = phoneNumber;
         this.itemDescription = itemDescription;
         this.date = date;
         this.isDeleted = isDeleted;
+        this.itemLocation = itemLocation;
         this.lostOrFound = lostOrFound;
     }
 
     public String toString() {
-        return this.itemId + ", " + this.userName + ", " + this.phoneNumber + ", " + itemDescription + ", " + date + ", " + lostOrFound;
+        return this.itemId + ", " + this.userName + ", " + this.phoneNumber + ", " + itemDescription + ", " + date + ", " + itemLocation + ", " + lostOrFound;
     }
     // Getters
     public int getItemId() {

@@ -79,9 +79,10 @@ public class DbHelper extends SQLiteOpenHelper {
                 String itemDescription = cursor.getString(3);
                 String date = cursor.getString(4);
                 boolean isDeleted = cursor.getInt(5) == 1 ? true: false;
-                String lostOrFoundPost = cursor.getString(6);
+                String itemLocation = cursor.getString(6);
+                String lostOrFoundPost = cursor.getString(7);
 
-                LostAndFoundModel newItemRecord = new LostAndFoundModel(itemID, userName, phoneNumber, itemDescription, date, isDeleted, lostOrFoundPost);
+                LostAndFoundModel newItemRecord = new LostAndFoundModel(itemID, userName, phoneNumber, itemDescription, date, isDeleted, itemLocation, lostOrFoundPost);
                 itemCollection.add(newItemRecord);
 
             } while (cursor.moveToNext());
@@ -96,6 +97,14 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     public boolean deleteLostOrFoundItemRecord(LostAndFoundModel itemRecord) {
-    return false;
+        SQLiteDatabase db = this.getWritableDatabase();
+        String deleteQueryStr = "DELETE FROM " + TABLE_ITEMS_LOST_AND_FOUND + " WHERE " + ITEM_ID + " = " + itemRecord.getItemId();
+        Cursor cursor = db.rawQuery(deleteQueryStr, null);
+
+        if (cursor.moveToFirst()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

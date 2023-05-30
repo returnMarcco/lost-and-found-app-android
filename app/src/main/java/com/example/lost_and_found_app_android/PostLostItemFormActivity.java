@@ -61,7 +61,7 @@ public class PostLostItemFormActivity extends AppCompatActivity {
 
                 try {
                     if (lostOrFoundPost != null) {
-                        LostAndFoundModel lostAndFoundPost = new LostAndFoundModel(-1, userName.getText().toString(), Integer.parseInt(userPhoneNumber.getText().toString()), itemDescription.getText().toString(), dateOfPost.getText().toString(), false, lostOrFoundPost);
+                        LostAndFoundModel lostAndFoundPost = new LostAndFoundModel(-1, userName.getText().toString(), Integer.parseInt(userPhoneNumber.getText().toString()), itemDescription.getText().toString(), dateOfPost.getText().toString(), false, itemLocation.getText().toString(), lostOrFoundPost);
                         DbHelper dataBaseHelper = new DbHelper(PostLostItemFormActivity.this);
                         boolean success = dataBaseHelper.createLostOrFoundItemRecord(lostAndFoundPost);
                         if (success) {
