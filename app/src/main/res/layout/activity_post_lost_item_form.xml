@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DEB841"
     tools:context=".PostLostItemFormActivity">
 
     <View
         android:id="@+id/idHeaderView"
         android:layout_width="413dp"
         android:layout_height="68dp"
-        android:background="#177E89"
+        android:background="#37323E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +38,7 @@
         android:id="@+id/idFooterView"
         android:layout_width="411dp"
         android:layout_height="72dp"
-        android:background="#177E89"
+        android:background="#37323E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -61,6 +62,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginTop="9dp"
         android:text="@string/post_type"
+        android:textColor="#37323E"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idHeaderView" />
 
@@ -157,6 +159,7 @@
         android:layout_marginStart="155dp"
         android:layout_marginEnd="168dp"
         android:layout_marginBottom="11dp"
+        android:backgroundTint="#37323E"
         android:text="@string/save"
         app:layout_constraintBottom_toTopOf="@+id/idFooterView"
         app:layout_constraintEnd_toEndOf="parent"

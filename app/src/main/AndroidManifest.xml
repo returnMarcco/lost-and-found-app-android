@@ -13,9 +13,6 @@
         android:theme="@style/Theme.Lostandfoundappandroid"
         tools:targetApi="31">
         <activity
-            android:name=".RemoveLostAndFoundPostActivity"
-            android:exported="false" />
-        <activity
             android:name=".SeeAllLostItemsActivity"
             android:exported="false" />
         <activity

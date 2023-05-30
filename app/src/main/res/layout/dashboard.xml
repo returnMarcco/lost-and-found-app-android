@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DEB841"
     tools:context=".Dashboard">
 
     <View
         android:id="@+id/idHeaderView"
         android:layout_width="413dp"
         android:layout_height="68dp"
-        android:background="#177E89"
+        android:background="#37323E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +38,7 @@
         android:id="@+id/idFooterView"
         android:layout_width="411dp"
         android:layout_height="72dp"
-        android:background="#177E89"
+        android:background="#37323E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -54,17 +55,29 @@
         app:layout_constraintTop_toTopOf="@+id/idFooterView"
         tools:ignore="TextContrastCheck" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="323dp"
+        android:layout_height="510dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="108dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.718"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idHeaderView"
+        app:srcCompat="@drawable/magnifying_glass_icon_26761" />
+
     <Button
         android:id="@+id/idNewPostBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="381dp"
-        android:layout_marginEnd="128dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="#37323E"
         android:text="@string/create_new_post"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idHeaderView" />
+        app:layout_constraintBottom_toTopOf="@+id/idShowAllItemsBtn"
+        app:layout_constraintStart_toStartOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/idShowAllItemsBtn"
@@ -72,10 +85,12 @@
         android:layout_height="48dp"
         android:layout_marginStart="134dp"
         android:layout_marginEnd="134dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#37323E"
         android:text="@string/show_all_items"
         app:layout_constraintBottom_toTopOf="@+id/idFooterView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
