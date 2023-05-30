@@ -22,6 +22,10 @@ public class LostAndFoundModel {
         this.isDeleted = isDeleted;
         this.lostOrFound = lostOrFound;
     }
+
+    public String toString() {
+        return this.itemId + ", " + this.userName + ", " + this.phoneNumber + ", " + itemDescription + ", " + date + ", " + lostOrFound;
+    }
     // Getters
     public int getItemId() {
         return itemId;
